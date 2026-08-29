@@ -1,0 +1,16 @@
+import { Book } from "./classes/book.js";
+import { Library } from "./classes/library.js";
+import { User } from "./classes/user.js";
+const book1 = new Book("a01", "Mély levegő", "Halász Rita", 2599);
+const book2 = new Book("a02", "A szakállas Neptun", "Nádasdy Ádám", 4499);
+const library = new Library();
+library.addBook(book1);
+library.addBook(book2);
+console.log("Library's book list:");
+console.log(library.listAllBooks());
+const user1 = new User("abc123", "Teszt Elek", "teszt.elek@gmail.com");
+const borrowedBook = user1.borrowBook(library, "a01");
+console.log("Boorowed book:");
+console.log(borrowedBook);
+console.log("Library's book list after borrowing:");
+console.log(library.listAllBooks());
